@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "c7094197-1844-4fb1-ab73-ce4d00fdc443",
+		"name": "Correlation One Sample API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get questions for assessment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3002/assessment/questions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"assessment",
+						"questions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start assessment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"asmtId\": 2,\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\",\n\t\"email\": \"jdoe@test.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3002/assessment/start",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"assessment",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit incorrect answer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\": 43,\n\t\"submittedAnswer\": \"Do so by joining 3 tables\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3002/question/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"question",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit correct answer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionId\": 43,\n\t\"submittedAnswer\": \"Split the two tables in half\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3002/question/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"question",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
